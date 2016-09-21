@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo</title>
+  <script type="text/javascript" src="mevents.js"></script>
+  <script>
+    var mevent=new Mevents;
+
+    mevent.on("test",function(){
+      console.log(arguments);
+      console.log("这是test事件。");
+    });
+    mevent.once("once",function(){
+      console.log("这是once监听事件。",arguments);
+    });
+    mevent.emit('test',{msg:'this is a test data.',bool:true});
+    mevent.emit('test');
+
+    mevent.emit('once',{msg:'this is a test data.',bool:false});
+    mevent.emit('once');
+
+
+    //设计例子
+    function ajax(){
+      Mevents.call(this);//继承
+    }
+    //原型继承
+    //也可以这样,es6支持
+    //Object.setPrototypeOf(ajax.prototype,Mevents.prototype);
+    ajax.prototype.__proto__=Mevents.prototype;
+
+    ajax.prototype.open=function(url,method,bool){
+
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
