@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>demo</title>
-  <script type="text/javascript" src="mevents.js"></script>
+  <script type="text/javascript" src="js/mevents.js"></script>
   <script>
     var mevent=new Mevents;
 
@@ -21,6 +21,24 @@
     mevent.emit('once');
 
 
+    //Mevents.prototype.delay = function(){return this}
+
+
+    var util = {
+      inherits:function(ctor, superCtor){
+        if (ctor === undefined || ctor === null)
+        throw new TypeError('The constructor to "inherits" must not be ' +
+                            'null or undefined');
+        if (superCtor === undefined || superCtor === null)
+        throw new TypeError('The super constructor to "inherits" must not ' +
+                            'be null or undefined');
+        if (superCtor.prototype === undefined)
+        throw new TypeError('The super constructor to "inherits" must ' +
+                            'have a prototype');
+        ctor.prototype.__proto__=superCtor.prototype;
+      }
+    }
+
     //设计例子
     function ajax(){
       Mevents.call(this);//继承
@@ -28,15 +46,19 @@
     //原型继承
     //也可以这样,es6支持
     //Object.setPrototypeOf(ajax.prototype,Mevents.prototype);
-    ajax.prototype.__proto__=Mevents.prototype;
+    //ajax.prototype.__proto__=Mevents.prototype;
+
+    util.inherits(ajax,Mevents);
 
     ajax.prototype.open=function(url,method,bool){
 
     }
 
+    
+
   </script>
 </head>
 <body>
-
+请在控制台查看效果...
 </body>
 </html>

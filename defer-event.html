@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>延迟的事件驱动</title>
+
+	<script type="text/javascript" src="js/mevents.js"></script>
+	<script type="text/javascript" src="js/defer-event.js"></script>
+
+	<script type="text/javascript">
+		/*var t = deferEvent('test');
+		t.on('demo',function(e){
+			console.log(e);
+		});
+		t.on('demo',function(e){
+			console.log(e,e);
+		});
+		setTimeout(function(){
+			t.emit('demo','触发demo');
+			t.emit('demo','触发demo');
+		},3000);*/
+		var t1 = Math.random()*10*1000;
+		var t2 = Math.random()*10*1000;
+
+		console.log('t1:'+t1,'t2:'+t2);
+		setTimeout(function(){
+			console.log('setTimeout1');
+			deferEvent('test').on('start',function(e){
+				console.log(e);
+			});
+		},t1);
+
+		setTimeout(function(){
+
+			console.log('setTimeout2');
+			deferEvent('test').emit('start',"触发start事件");
+
+
+		},t2);
+	</script>
+</head>
+<body>
+	请在控制台查看效果...
+</body>
+</html>
