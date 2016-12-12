@@ -32,7 +32,7 @@ eventDemo.emit('myEvent',"触发事件啦。");
 
 在未知事件订阅与发布执行顺序时也可以实现异步编程通讯
 
-```
+```js
 var t1 = Math.random()*10*1000;
 var t2 = Math.random()*10*1000;
 
@@ -62,7 +62,7 @@ setTimeout(function(){
 
 比如一个基于api的网页，网页导航是固定的数据，那么定义个`config.js` 用ajax来获取数据；
 
-```
+```js
 //config.js
 $.ajax({
 	...
@@ -81,7 +81,7 @@ $.ajax({
 
 config.js
 
-```
+```js
 //config.js
 $.ajax({
 	...
@@ -94,7 +94,7 @@ $.ajax({
 ```
 index.js
 
-```
+```js
 deferEvent('config').on('success',function(e){
 	...
 });
