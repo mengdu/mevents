@@ -14,11 +14,13 @@
     mevent.once("once",function(){
       console.log("这是once监听事件。",arguments);
     });
-    mevent.emit('test',{msg:'this is a test data.',bool:true});
-    mevent.emit('test');
+    setTimeout(function(){
+      mevent.emit('test',{msg:'this is a test data.',bool:true});
+      mevent.emit('test');
 
-    mevent.emit('once',{msg:'this is a test data.',bool:false});
-    mevent.emit('once');
+      mevent.emit('once',{msg:'this is a test data.',bool:false});
+      mevent.emit('once');
+    },1000);
 
 
     //Mevents.prototype.delay = function(){return this}
