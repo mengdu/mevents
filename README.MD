@@ -1,30 +1,28 @@
 
 ## Mevents
 
- `Mevents` 是一个自定义事件的对象，接口与功能和nodejs中的 `events` 模块的 `EventEmitter` 对象相同。
- 算是个仿写 `EventEmitter` 吧，但是内部代码不太一样，主要接口功能一样。
- 可以实现事件的订阅/与发布，可以用在一些异步编程逻辑中。
- 可以在浏览器端使用也可以在nodejs端使用。
+ `Mevents` 是一个事件订阅与发布对象；接口与功能和nodejs中的 `events` 模块的 `EventEmitter` 对象相同。
 
  **[阅读具体api](https://github.com/mengdu/mevents/blob/master/api.md)**
+
 
  简单使用例子：
 
  ```js
-
- var eventDemo=new Mevents;
- //监听一个自定义事件 myEvent
- eventDemo.on('myEvent',function(){
-   console.log(arguments);
- });
+var eventDemo = new = Mevents();
+//监听一个自定义事件 myEvent
+eventDemo.on('myEvent', function () {
+	console.log(arguments);
+});
 
 //触发myEvent事件
-eventDemo.emit('myEvent',"触发事件啦。");
+eventDemo.emit('myEvent', "触发事件啦。");
 
  ```
- 注：仅需要 `mevents.js` 文件即可。
 
- 更详细例子请看 `demo.html` 。
+更详细例子请看 `demo.html` 。
+
+
 
 ## derferEvent
 

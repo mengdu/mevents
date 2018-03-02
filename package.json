@@ -1,0 +1,22 @@
+{
+  "name": "events-js",
+  "version": "1.0.0",
+  "description": "`Mevents` 是一个自定义事件的对象，接口与功能和nodejs中的 `events` 模块的 `EventEmitter` 对象相同。\r  算是个仿写 `EventEmitter` 吧，但是内部代码不太一样，主要接口功能一样。\r  可以实现事件的订阅/与发布，可以用在一些异步编程逻辑中。\r  可以在浏览器端使用也可以在nodejs端使用。",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengdu/mevents.git"
+  },
+  "keywords": [
+    "events"
+  ],
+  "author": "lanyue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mengdu/mevents/issues"
+  },
+  "homepage": "https://github.com/mengdu/mevents#readme"
+}
